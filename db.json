@@ -1,0 +1,99 @@
+{
+  "submit": [
+    {
+      "firstName": "Sreya",
+      "lastName": "Nath",
+      "username": "sreya",
+      "password": "sreyasreya",
+      "confirm_password": "sreyasreya",
+      "Age": "22",
+      "email": "sreya@gmail.com",
+      "phone": "234354664",
+      "gender": "female",
+      "id": 1
+    },
+    {
+      "firstName": "Neha",
+      "lastName": "N",
+      "username": "neha",
+      "password": "nehaneha",
+      "confirm_password": "nehaneha",
+      "Age": "32",
+      "email": "neha@gmail.com",
+      "phone": "3453454",
+      "gender": "female",
+      "id": 2
+    },
+    {
+      "firstName": "Hari",
+      "lastName": "H",
+      "username": "hari",
+      "password": "harihari",
+      "confirm_password": "harihari",
+      "Age": "23",
+      "email": "hari@gmail.com",
+      "phone": "7876543423",
+      "gender": "male",
+      "id": 3
+    },
+    {
+      "firstName": "Arun",
+      "lastName": "Raju",
+      "username": "arun",
+      "password": "arunarun",
+      "confirm_password": "arunraju@gmail.com",
+      "Age": "21",
+      "email": "arunraju@gmail.com",
+      "phone": "5678987654",
+      "gender": "male",
+      "id": 4
+    },
+    {
+      "firstName": "shambu",
+      "lastName": "s",
+      "username": "shambu",
+      "password": "shambushambu",
+      "Age": "6",
+      "email": "shamu@gmail.com",
+      "phone": "1234567898",
+      "gender": "male",
+      "id": 5
+    },
+    {
+      "firstName": "Veena",
+      "lastName": "v",
+      "username": "veena",
+      "password": "veenaveena",
+      "confirm_password": "veena",
+      "Age": "23",
+      "email": "veena@gmail.com",
+      "phone": "6765432312",
+      "gender": "female",
+      "id": 6
+    },
+    {
+      "firstName": "Liya",
+      "lastName": "L",
+      "username": "liya",
+      "password": "liyaliya",
+      "confirm_password": "liyaliya",
+      "Age": "15",
+      "email": "liya@gmail.com",
+      "phone": "7876543432",
+      "gender": "female",
+      "id": 7
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "username": "",
+      "password": "",
+      "confirm_password": "",
+      "Age": "",
+      "email": "",
+      "phone": "",
+      "gender": "",
+      "id": 8
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+
+    .btn{
+        color: white;
+        background-color: blue;
+        border-radius: 5%;
+        border:none;
+        padding: 5px 5px;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+        
+    }
+
+    table,tr{
+       border: 1px solid black;
+       width: 100%;
+       text-align: center;
+    }
+.logout_btn{
+    float: right;
+}

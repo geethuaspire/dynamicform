@@ -1,0 +1,23 @@
+.container{
+    width: 30%;
+    border: 1px solid black;
+    margin: 50px auto;
+    text-align: center;
+    padding: 30px 30px;
+
+    .email{
+           padding: 10px 10px;
+    }
+    .password{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .btn{
+        background-color: blue;
+        color: white;
+        margin-bottom: 10px;
+    }
+    .link{
+        text-decoration: none;
+    }
+}

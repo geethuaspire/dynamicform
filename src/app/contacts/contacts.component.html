@@ -1,0 +1,26 @@
+
+<div class="container">
+    <button class="logout_btn" (click)="logout()">Logout</button>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+        <tr *ngFor="let contact of contactData">
+            <td>{{ contact.id }}</td>
+            <td>{{ contact.firstName }}</td>
+            <td>{{ contact.lastName }}</td>
+            <td>{{ contact.username }}</td>
+            <td>{{ contact.Age }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.phone }}</td>
+            <button type="button" class="btn" (click)="getDetails(contact.id)">Get Details</button>
+        </tr>
+    </table>
+
+</div>
