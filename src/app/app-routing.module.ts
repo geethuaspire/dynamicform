@@ -19,10 +19,6 @@ const routes: Routes = [
     component:ContactsComponent
   },
   {
-    path:'register',
-    component:RegisterComponent
-  },
-  {
     path:'contact_details',
     component:ContactDetailsComponent
   },

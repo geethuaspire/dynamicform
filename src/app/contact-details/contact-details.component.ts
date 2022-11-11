@@ -17,7 +17,11 @@ export class ContactDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.contactsservice.getContacts()
+    this.getContactDetails();
+}
+
+getContactDetails(){
+  this.contactsservice.getContacts()
     .subscribe((data:any)=>{
       this.contactdetails_data = data;
       console.log("contactdetails dat:",this.contactdetails_data.length)

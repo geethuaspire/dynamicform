@@ -8,6 +8,7 @@ import { ContactsModule } from './contacts/contacts.module';
 import { ContactDetailsComponent } from './contact-details/contact-details.component';
 import { LoginModule } from './login/login.module';
 import { CookieService } from 'ngx-cookie-service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { CookieService } from 'ngx-cookie-service';
     LoginModule,
     RegisterModule,
     ContactsModule,
+    HttpClientModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

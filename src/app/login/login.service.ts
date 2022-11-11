@@ -42,6 +42,8 @@ export class LoginService {
     //  )
      
   //}
-
+  onSubmit(){
+    return this.http.get<any>("http://localhost:3000/submit");
+  }
 
 }

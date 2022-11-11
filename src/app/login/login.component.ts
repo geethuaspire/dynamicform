@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl , FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+//import { HttpClient } from '@angular/common/http';
 
+import { LoginService } from './login.service';
 import { UsernameValidators } from '../shared/validator/username.validator';
 import { PasswordValidators } from '../shared/validator/password.validator';
 
@@ -14,7 +15,8 @@ import { PasswordValidators } from '../shared/validator/password.validator';
 export class LoginComponent implements OnInit {
   constructor(
    private router:Router,
-   private http:HttpClient,
+  // private http:HttpClient,
+   private loginservice:LoginService,
     ) { }
 
   ngOnInit(): void {
@@ -60,7 +62,8 @@ export class LoginComponent implements OnInit {
 
    onSubmit(){
   
-        this.http.get<any>("http://localhost:3000/submit").
+      // this.http.get<any>("http://localhost:3000/submit").
+      this.loginservice.onSubmit().
          subscribe(res=>{
         const match = res.find((item:any)=>item.username == this.loginForm.controls.username.value && item.password == this.loginForm.controls.password.value);
         

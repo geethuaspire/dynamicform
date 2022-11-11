@@ -37,7 +37,9 @@ export class ContactsComponent implements OnInit {
   //    }
   getDetails(id:string){
      console.log("id:",id);
-     this.router.navigate(['/contact_details',id ]);
+     const url = '/contact_details/' + id;
+
+     this.router.navigateByUrl(url);
   }
 
   logout(){

@@ -6,6 +6,9 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class ContactsService {
+  static canActivate(arg0: any, arg1: any): any {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(
     private http:HttpClient,
@@ -13,7 +16,7 @@ export class ContactsService {
   ) { }
 
   getContacts(){
-   return this.http.get<registerData>("http://localhost:3000/submit")
+   return this.http.get<registerData[]>("http://localhost:3000/submit")
   }
  
 }
