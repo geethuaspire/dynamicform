@@ -13,7 +13,10 @@ import { PasswordValidators } from '../shared/validator/password.validator';
 
 
 export class RegisterComponent implements OnInit {
-  
+  usernameRequiredError = "This Field is Required";
+  usernameSpaceError ="Should not contain spaces";
+  passwordRequired ="This Field is Required";
+  passwordShouldStrong = "Require minimum 6 characters";
   isSubmitted = false;
   registerForm = new FormGroup(
     {
@@ -89,10 +92,12 @@ get gender(){
 getUsernameError(){
 
    if(this.username.hasError('required')){
-    return 'This Field is Required'
+   // return 'This Field is Required'
+   return this.usernameRequiredError;
    }
    if(this.username.hasError('shouldNotContainSpaces')){
-    return 'Should not contain spaces';
+   // return 'Should not contain spaces';
+   return this.usernameSpaceError;
    }
    return null;
 
@@ -100,19 +105,18 @@ getUsernameError(){
 
 getPasswordError(){
   if(this.password.hasError('required')){
-    return 'This Field is Required';
+    //return 'This Field is Required';
+    return this.passwordRequired;
   }
   if(this.password.hasError('shouldBeStrong')){
     const errors = this.password.errors?.['shouldBeStrong'];
-    const requiredLength = errors.requiredLength;
-    return `Require minimum ${requiredLength} characters`
+    //const requiredLength = errors.requiredLength;
+    // return `Require minimum ${requiredLength} characters`
+   // return `Require minimum 6 characters`
+    return this.passwordShouldStrong;
   }
   return null;
-}
-
-
-
-    
+}   
   constructor(
     private registerservice:RegisterService,
     private router : Router,
