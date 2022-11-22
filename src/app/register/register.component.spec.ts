@@ -1,6 +1,7 @@
 
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, fakeAsync,inject, TestBed, tick } from '@angular/core/testing';
+import { FormBuilder } from '@angular/forms';
 
 import { RegisterComponent } from './register.component';
 import { RegisterService } from './register.service';
@@ -79,27 +80,22 @@ describe('RegisterComponent', () => {
   //   expect(lastname.hasError('required')).toBeTruthy();
   // });
   
-it('should check username error',()=>{
-    component.getUsernameError();
-});
+// it('should check username Required error',()=>{
+//     expect(component.getUsernameError()).toBe('This Field is Required');
+// });
 
-it('should check username required',()=>{
-  component.usernameRequiredError;
- });
+//  it('should check username should not contain spaces',()=>{
+//    if( mockdta.username = "saf"){
+//     expect(component.getUsernameError()).toBe('Should not contain spaces');
+//    }
 
- it('should check username should not cntain spaces',()=>{
-  component.usernameSpaceError;
- });
-
- it('should check password error',()=>{
-   component.getPasswordError();
- });
- it('should check password required',()=>{
-   component.passwordRequired;
- });
- it('should check password should be strong',()=>{
-  component.passwordShouldStrong;
- })
+//  });
+//  it('should check password Required Error',()=>{
+//   expect(component.getPasswordError()).toEqual('This Field is Required');
+//  });
+//  it('should check password should be strong',()=>{
+//    expect(component.getPasswordError()).toBe('wrffasfsf')
+//  })
    
 });
 

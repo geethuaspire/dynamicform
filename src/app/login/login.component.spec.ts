@@ -62,10 +62,10 @@ describe('LoginComponent', () => {
  }));
 
  it('unit test to check login works ',fakeAsync(()=>{
-  mockList.forEach(item => {
-    item.firstName = "t";
-    item.lastName ="p";
-  })
+   mockList.forEach(item => {
+     item.firstName = "Sre";
+     item.lastName ="Nath";
+   })
   let spy = spyOn(service,'onSubmit').and.returnValue(of([mockLst]));
   component.onSubmit();
   tick();
@@ -113,14 +113,6 @@ it('form should be valid', () => {
   component.loginForm.controls.username.setValue('Liya');
   component.loginForm.controls.password.setValue('liyaliya');
 });
-
-
-
-// it('should return message if username is required', () => {
-//  control.setValue('This Field is Required');
-//  // expect(validateUrl(control)).toBeNull();
- 
-// });
  
 
 //  it('Should mark username as invalid when it has no value',()=>{

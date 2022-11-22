@@ -80,7 +80,7 @@ export class LoginComponent implements OnInit {
     onSubmit(){
       this.loginservice.onSubmit().
          subscribe(res=>{
-        const match = res.find((item:any)=>item.username == this.loginForm.controls.username.value && item.password == this.loginForm.controls.password.value);
+        const match = res.find((item:any)=>item.UserName == this.loginForm.controls.username.value && item.Password == this.loginForm.controls.password.value);
         if(match){
           console.log("success");
           this.getContacts();

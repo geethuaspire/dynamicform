@@ -5,20 +5,28 @@
         <tr>
             <th>Id</th>
             <th>First Name</th>
-            <th>Last Name</th>
             <th>Username</th>
-            <th>Age</th>
-            <th>Email</th>
-            <th>Phone</th>
+            <th>Password</th>
+            <th>Mobile No</th>
+            <th>Email Id</th>
+            <th>Gender</th>
+            <th>DOB</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
         </tr>
         <tr *ngFor="let contact of contactData">
             <td>{{ contact.id }}</td>
-            <td>{{ contact.firstName }}</td>
-            <td>{{ contact.lastName }}</td>
-            <td>{{ contact.username }}</td>
-            <td>{{ contact.Age }}</td>
-            <td>{{ contact.email }}</td>
-            <td>{{ contact.phone }}</td>
+            <td>{{ contact.FirstName }}</td>
+            <td>{{ contact.UserName }}</td>
+            <td>{{ contact.Password }}</td>
+            <td>{{ contact.MobileNo }}</td>
+            <td>{{ contact.EmailId }}</td>
+            <td>{{ contact.Gender }}</td>
+            <td>{{ contact.DOB}}</td>
+            <td>{{ contact.Address}}</td>
+            <td>{{ contact.City}}</td>
+            <td>{{ contact.State}}</td>
             <button type="button" id="detail-button" class="btn" (click)="getDetails(contact.id)">Get Details</button>
         </tr>
     </table>

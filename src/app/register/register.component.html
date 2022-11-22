@@ -1,106 +1,73 @@
 <div class="container">
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-
-    <div class="input">
-        <label> First Name </label>
-        <input type="text" formControlName="firstName">
-        <div *ngIf="firstName.touched && firstName.errors?.['required']">
-            This field is required.
-        </div>
-    </div>
-
-    <div class="input">
-     <label>Last Name</label>
-     <input type="text" formControlName="lastName">
-     <div *ngIf="lastName.touched && lastName.errors?.['required']">
-         This field is required.
-     </div>
-    </div>
-   
+<form [formGroup]="registrationForm"  (ngSubmit)="onSubmit()">
     
-    <div class="input">
-     <label>Username</label>
-     <input type="text" formControlName="username">
-     <div *ngIf="username.touched">
-        <div class="field_required">
-           {{ getUsernameError()}}
+    <div *ngFor="let control of dynamicFormArray">
+        <div class="input" [ngSwitch]="control.Type">
+
+            <div *ngSwitchCase="'input'">
+                 <div>
+                    <label>{{control.label}}</label>
+                 </div>
+                 <div>
+                    <input type="text" [formControlName]="control.ID">
+                    <div *ngIf="registrationForm.get(control.ID).dirty || registrationForm.get(control.ID).touched">
+                     <small *ngIf="!registrationForm.get(control.ID).valid">
+                        {{control.label}} is Required.
+                     </small>
+                    </div>
+                 </div>
+            </div>
+            <div *ngSwitchCase="'date'">
+                <div>
+                    <label>{{control.label}}</label>
+                 </div>
+                 <div>
+                    <input type="date"  [formControlName]="control.ID" >
+                    <div *ngIf="registrationForm.get(control.ID).dirty || registrationForm.get(control.ID).touched">
+                        <small *ngIf="!registrationForm.get(control.ID).valid">
+                           {{control.label}} is Required.
+                        </small>
+                       </div>
+   
+                 </div>
+            </div>
+            <div *ngSwitchCase="'radio'">
+                <div>
+                    <label>{{control.label}}</label>
+                </div>
+                <div>
+                    <label class="radio" *ngFor="let val of control.Value.split(',')">
+                        <input type="radio"   [formControlName]="control.ID" name="{{control.ID}}" value="{{val}}">  
+                        {{val}}     
+                    </label>
+                    <div *ngIf="registrationForm.get(control.ID).dirty || registrationForm.get(control.ID).touched">
+                        <small *ngIf="!registrationForm.get(control.ID).valid">
+                           {{control.label}} is Required.
+                        </small>
+                       </div>
+   
+                </div>
+            </div>
+            <div *ngSwitchCase="'select'">
+                <div>
+                    <label>{{control.label}}</label>
+                 </div>
+                 <div>
+                    <select  [formControlName]="control.ID">
+                        <option value="-1">Select</option>
+                        <option *ngFor="let val of control.Value.split(',')" value="{{val}}">{{val}}</option>
+                    </select>
+                    <div *ngIf="registrationForm.get(control.ID).dirty || registrationForm.get(control.ID).touched">
+                        <small *ngIf="!registrationForm.get(control.ID).valid">
+                           {{control.label}} is Required.
+                        </small>
+                       </div>
+                 </div>
+            </div>
         </div>
-    </div>
-    </div>
-
-    <div class="input">
-     <label>Password</label>
-     <input type="password" formControlName="password">
-      <!-- <div *ngIf="password.touched && password.errors" class="invalid-feedback">
-        <div *ngIf="password.errors?.['required']">Passwordis required</div>
-        <div *ngIf="password.errors?.['password']">Password must be valid </div>
-     </div>
-      - -->
-      <div *ngIf="password.touched">
-         <div class="field_required">
-              {{ getPasswordError()}}
-         </div>
-     </div>
-    </div>
-
-    <div class="input">
-     <label>Confirm password</label>
-     <input type="password" formControlName="confirm_password">
-      <div *ngIf="confirm_password.touched && confirm_password.errors?.['required']">
-        This Field is required.
-     </div>
-    </div>
-
-    <div class="input">
-     <label>Age</label>
-     <input type="text" formControlName="Age">
-     <div *ngIf="Age.touched && Age.errors?.['required']">
-        This Field is required.
-     </div>
-    </div>
-
-    <div class="input">
-     <label>Email</label>
-     <input type="text" formControlName="email">
-     <div *ngIf="email.touched && email.errors" class="invalid-feedback">
-        <div *ngIf="email.errors?.['required']">Email is required</div>
-        <div *ngIf="email.errors?.['email']">Email must be a valid email address</div>
-     </div>
-     </div>
-
-    <div>
-     <label class="input">Phone</label>
-     <input type="text" formControlName="phone">
-     <!-- <div *ngIf=" phone.touched && phone.errors?.['required']">
-        This Field is required.
-     </div> -->
-
-     <div *ngIf="phone.touched && phone.invalid" class="alert alert-danger">  
-      <div *ngIf="phone.errors?.['required']">Mobile Number is required.</div>  
-      <div *ngIf="phone.errors?.['pattern']">Please, Enter 10 digit Mobile Number.</div>  
-     </div>  
-
-    </div>
-
-	<div class="custom-control custom-radio">
-        <input id="male" type="radio" class="custom-control-input" value="male" name="gender" formControlName="gender">
-        <label class="custom-control-label" for="male">Male</label>
-    </div>
-
-    <div class="custom-control custom-radio">
-         <input id="female" type="radio" class="custom-control-input" value="female" name="gender" formControlName="gender">
-         <label class="custom-control-label" for="female">Female</label>
-    </div>
-
-    <div class="gender" *ngIf="isSubmitted && gender.errors?.['required']">
-        <p>Please select either value</p>
-    </div>
-
-   <div class="button">
-   <!--- <button type="submit" [disabled]=""!registerForm.valid>Submit</button> -->
-   <button class="btn" type="submit">Submit</button>
    </div>
-
-
+   <div class="button">
+    <button class="btn" type="submit">Submit</button>
+    </div>
 </form>
 </div>
